@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #F6F0E5;
+  --color-ivory-50: #FDFAF5;
+  --color-ivory-100: #F6F0E5;
+  --color-ivory-200: #EBE1CF;
+  --color-ivory-300: #DDD0B6;
+  --color-ivory-400: #CCA973;
+
+  --color-gold: #C6A15B;
+  --color-gold-50: #FAF5E8;
+  --color-gold-100: #F3E7C9;
+  --color-gold-200: #E6D09A;
+  --color-gold-300: #D8B96C;
+  --color-gold-400: #C6A15B;
+  --color-gold-500: #B58F49;
+  --color-gold-600: #9B7633;
+  --color-gold-700: #7A5B22;
+
+  --color-navy: #17243B;
+  --color-navy-50: #F0F4F9;
+  --color-navy-100: #DEE6F2;
+  --color-navy-200: #BDCDE5;
+  --color-navy-300: #8FA8CE;
+  --color-navy-400: #597CAD;
+  --color-navy-500: #355685;
+  --color-navy-600: #253F67;
+  --color-navy-700: #1D3050;
+  --color-navy-800: #17243B;
+  --color-navy-900: #10192A;
+  --color-navy-950: #0B101D;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cinzel', serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F6F0E5;
+  color: #17243B;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EBE1CF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C6A15B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B58F49;
+}
+
+/* Subtle focus indicators */
+*:focus-visible {
+  outline: 2px solid #C6A15B;
+  outline-offset: 2px;
+}

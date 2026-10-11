@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  GUIDE
+  ADMIN
+}
+
+model User {
+  id               String   @id @default(uuid())
+  email            String   @unique
+  username         String   @unique
+  passwordHash     String
+  name             String
+  role             Role     @default(STUDENT)
+  department       String
+  enrollmentNumber String?  @unique
+  designation      String?
+  isActive         Boolean  @default(true)
+  invitationCode   String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  AuditLogs AuditLog[]
+
+  @@map("users")
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String
+  category  String
+  details   String
+  ipAddress String
+  timestamp DateTime @default(now())
+
+  @@map("audit_logs")
+}
